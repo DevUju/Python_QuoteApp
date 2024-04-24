@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Quotes</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="favicon.ico" />
+</head>
+<body>
+    <h1>Get Quotes</h1>
+    <form action="/quote">
+        <input type="text" name="keyword" id="keyword" placeholder="Enter a Keyword" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>a

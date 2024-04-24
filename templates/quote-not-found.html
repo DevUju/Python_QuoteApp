@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Not Found</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Quote Not Found</h1>
+    <p>Try another keyword!</p>
+    <form action="/quote">
+        <input type="text" name="keyword" id="keyword" placeholder="Enter a City" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
