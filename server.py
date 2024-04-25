@@ -12,7 +12,6 @@ def index():
 @app.route("/quote")
 def new_quote():
     category = request.args.get("category")
-    print(request.args)
     quote_data = get_quote(category)
     if category == "" and len(quote_data) != 0:
         return render_template("index.html")
