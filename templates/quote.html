@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> A Quote on {{category}} </title>
+    <title> A Quote on {{keyword}} </title>
     <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet" />
 </head>
 <body>
-    <h1> A Quote on {{category}} </h1>
+    <h1> A Quote on {{keyword}} </h1>
     <p> {{quote}} </p>
     <p> By {{author}}</p>
 
     <form action="/quote">
-        <input type="text" name="keyword" id="keyword" placeholder="Enter a Keyword" />
-        <button type="submit">Submit</button>
+        <input type="text" name="keyword" id="keyword" placeholder="Enter a Keyword"/>
+        <button type="submit">Learn</button>
     </form>
 </body>
 </html>

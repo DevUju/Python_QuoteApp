@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from quote import get_quote
 from waitress import serve
+import requests
 
 app = Flask(__name__)
 @app.route("/")
@@ -11,20 +12,20 @@ def index():
 
 @app.route("/quote")
 def new_quote():
-    category = request.args.get("category")
-
-    if not bool(category.strip()):
-        city = "happiness"
+    category = request.args.get("keyword")
 
     quote_data = get_quote(category)
+    if category == "" and len(quote_data) != 0:
+        return render_template("index.html")
 
-    if not quote_data["cod"] == 200:
-        return render_template("city-not-found.html")
+    if len(quote_data) == 0:
+        return render_template("quote-not-found.html")
     
     return render_template(
-        "weather.html",
+        "quote.html",
+        keyword = quote_data[0]["category"].capitalize(),
         quote = quote_data[0]["quote"],
-        author = quote_data[0]["author"],
+        author = quote_data[0]["author"]
     )
 
 if __name__ == "__main__":
