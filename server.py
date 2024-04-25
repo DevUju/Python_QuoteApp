@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from quote import get_quote
 from waitress import serve
-import requests
 
 app = Flask(__name__)
 @app.route("/")
@@ -12,8 +11,8 @@ def index():
 
 @app.route("/quote")
 def new_quote():
-    category = request.args.get("keyword")
-
+    category = request.args.get("category")
+    print(request.args)
     quote_data = get_quote(category)
     if category == "" and len(quote_data) != 0:
         return render_template("index.html")
