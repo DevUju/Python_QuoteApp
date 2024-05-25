@@ -19,6 +19,7 @@ input, button {
 
 button {
     transition: all 1s ease;
+    margin: 15px;
 }
 
 button:hover{
